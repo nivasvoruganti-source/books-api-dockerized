@@ -1,7 +1,7 @@
 # Books API (Dockerized)
 
 A simple REST API to create, read, update, and delete books using **Node.js**, **Express**, and **MongoDB**.  
-The entire application is fully containerized using **Docker** and **Docker Compose**.
+The entire application is fully containerized using Docker and Docker Compose.
 
 ---
 
@@ -145,8 +145,5 @@ docker compose logs -f mongo
 ```
 
 ---
-
-## Project Complete 🎉
-Your Books API is fully dockerized, tested, and ready for submission.
 
 
