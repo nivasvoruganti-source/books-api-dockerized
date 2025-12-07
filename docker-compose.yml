@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    container_name: books-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGO_URL=mongodb://mongo:27017/booksdb
+    depends_on:
+      - mongo
+    networks:
+      - booksnet
+
+  mongo:
+    image: mongo:6.0
+    container_name: books-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: booksdb
+    networks:
+      - booksnet
+
+volumes:
+  mongo-data:
+
+networks:
+  booksnet:
